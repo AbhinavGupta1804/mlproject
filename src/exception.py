@@ -54,6 +54,7 @@ class CustomException(Exception):   # niche we are Inheriting from this Exceptio
 #     try:
 #         a = 1/0
 #     except Exception as e:
+#         logging.info("divide by zero")
 #         raise CustomException(e,sys)        
     
 
