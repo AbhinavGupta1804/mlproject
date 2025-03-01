@@ -30,15 +30,20 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
 
         for i in range(len(list(models))):       #traversing in diff models
             model = list(models.values())[i]   #bcoz values contain fuctions of algorithms
-            # para=param[list(models.keys())[i]]
+            para=param[list(models.keys())[i]]
 
-            # gs = GridSearchCV(model,para,cv=3)
-            # gs.fit(X_train,y_train)
+            gs = GridSearchCV(model,para,cv=3)
+            gs.fit(X_train,y_train)
+                                         #gs.best_params_ automatically contains the best parameters
+            model.set_params(**gs.best_params_)  ## Set the best parameters found by GridSearchCV
+            model.fit(X_train,y_train)       #The **  is used to unpack a dictionary and pass its key-value pairs as arguments to a function.
 
-            # model.set_params(**gs.best_params_)
-            # model.fit(X_train,y_train)
-
-            model.fit(X_train, y_train)  # Training model
+            #best_params_ = {                               #example 
+#                               'n_estimators': 100,
+#                               'max_depth': 10,
+#                               'learning_rate': 0.05
+#                                                                  }
+            # model.fit(X_train, y_train)  # Training model
 
             y_train_pred = model.predict(X_train)    #making predictions
 
