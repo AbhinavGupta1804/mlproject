@@ -25,8 +25,8 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
-# from src.components.model_trainer import ModelTrainerConfig
-# from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
 @dataclass #if we dont write it , then we will have to define __init__ function like in dataingestion class
 #CLASS DATAINGESTIONCONFIG DEFINES FILE PATHS FOR STORING OR ACCESSING TRAIN, TEST, 
 # AND RAW DATA DURING THE DATA INGESTION PROCESS
@@ -79,8 +79,8 @@ if __name__=="__main__": #It makes sure the code inside this runs only when you 
     data_transformation=DataTransformation()
     train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data) #passing these paths as parameter
 
-    # modeltrainer=ModelTrainer()
-    # print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
 
 
 
