@@ -49,7 +49,7 @@ class DataTransformation:           #This class returns a transformation bluepri
                 "test_preparation_course",
             ]
                                        #[ Square brackets → Used for lists,
-            num_pipeline= Pipeline(    #( Parentheses → Used for function calls  , here Pipeline is a function
+            num_pipeline= Pipeline(    #( Parentheses → Used for function/class calls  , here Pipeline is a predefined class
                 steps=[                
                 ("imputer",SimpleImputer(strategy="median")), #median kyo ki data m outliers h
                 ("scaler",StandardScaler())

@@ -92,3 +92,4 @@ class CustomException(Exception):   # niche we are Inheriting from this Exceptio
 #This line calls a function to generate a detailed error message and then stores it 
 # inside the self.error_message variable.
 
+ 
